@@ -8,5 +8,4 @@ public class GuestValidator {
     public boolean validateRoomNumber(int roomNumber) {
         return validRooms.contains(roomNumber);
     }
-
 }

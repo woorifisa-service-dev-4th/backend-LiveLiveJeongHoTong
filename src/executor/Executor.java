@@ -27,7 +27,7 @@ public class Executor {
 				}
 				String roomName = roomNameReader();
 				chatRoom = new ChatRoom(roomName);
-				chatRoomService.createChatRoom(roomName);
+				chatRoomService.createChatRoom(chatRoom);
 				System.out.println("채팅방 생성됨: " + chatRoom);
 
 				enterChat(p);
@@ -41,7 +41,8 @@ public class Executor {
 	public static void getChatRoomList() {
 		System.out.println("채팅방 목록");
 		System.out.println(chatRoomService.getChatRooms().size());
-		chatRoomService.getChatRooms().forEach((key, value) -> System.out.println(key + ". " + value));
+		chatRoomService.
+			getChatRooms().forEach((key, value) -> System.out.println(value));
 	}
 	public static void enterChat(Person p){
 		System.out.println("1. 채팅방 목록 보기 2. 메인으로 돌아가기");
