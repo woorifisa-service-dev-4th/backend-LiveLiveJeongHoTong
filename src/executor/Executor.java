@@ -18,7 +18,7 @@ public class Executor {
         System.out.println("1. 채팅방 생성하기 (강사만 가능)  2. 채팅방 입장하기");
         int option = optionsReader("번호를 입력하세요: "); // 입력값을 정수로 변환
         ChatRoom chatRoom;
-
+      
         switch (option) {
             case 1:
                 if (!n.equals("1")) {
@@ -64,4 +64,5 @@ public class Executor {
                 break;
         }
     }
+	
 }
