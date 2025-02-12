@@ -1,6 +1,5 @@
 package model;
 public class Host extends Person{
-
     private int id;
     private String email;
     private String password;
@@ -15,12 +14,10 @@ public class Host extends Person{
     }
 
     public int getId() {
-        return id;
+         return id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
-
-
 }
