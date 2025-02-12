@@ -29,8 +29,4 @@ bin/
 .DS_Store
 .idea
 
-
-# IntelliJ IDEA 관련 파일 무시
 *.iml
-.idea/
-out/
