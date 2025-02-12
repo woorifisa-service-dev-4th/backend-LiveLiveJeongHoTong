@@ -16,7 +16,7 @@ public class Executor {
 
 		switch (option) {
 			case 1:
-				if (p instanceof Guest) {
+				if (p == null || p instanceof Guest) {
 					System.out.println("권한이 없습니다.\n ");
 					startChat(p);
 					return;
