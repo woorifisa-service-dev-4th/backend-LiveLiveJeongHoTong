@@ -10,10 +10,7 @@ import repository.ChatRoomRepository;
 public class ChatRoomService {
 	private final ChatRoomRepository chatRoomRepository = new ChatRoomRepository();
 
-	public void createChatRoom(String roomName) throws IOException {
-		if(!isRoomNameValid(roomName)){
-			throw new IOException("1글자 이상 입력해주세요");
-		}
+	public void createChatRoom(String roomName) {
 		ChatRoom chatRoom = new ChatRoom(roomName);
 		chatRoomRepository.addChatRoom(chatRoom);
 	}
