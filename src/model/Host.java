@@ -1,5 +1,6 @@
+package model;
 
-public class Host {
+public class Host  extends Person{
     private int id;
    private String email;
    private String password;
