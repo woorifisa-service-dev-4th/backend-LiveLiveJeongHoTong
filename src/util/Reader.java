@@ -46,5 +46,21 @@ public class Reader {
 		}
 		return input;
 	}
+
+	public static int roomNumberReader() {
+		int input;
+		while (true) {
+			try {
+				System.out.print("입장하실 방 번호 입력하세요: ");
+				input = Integer.parseInt(br.readLine());
+				System.out.println();
+				break;
+			} catch (IOException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return input;
+	}
 }
+
 
