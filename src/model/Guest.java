@@ -15,16 +15,4 @@ public class Guest extends Person {
 		return nickname;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-
-	public int getRoomNumber() {
-		return roomNumber;
-	}
-
-	public void setRoomNumber(int roomNumber) {
-		this.roomNumber = roomNumber;
-	}
-
 }

@@ -14,6 +14,7 @@ public class GuestChatService {
     private GuestValidator guestValidator;
     private List<Guest> guestList;
     private List<ChatMessage> chatList;
+
     private Scanner scanner;
 
     public GuestChatService() {
@@ -35,7 +36,6 @@ public class GuestChatService {
         chat(guest); // 입장 후 채팅 시작
     }
 
-    // 한번 해보고
     public void chat(Guest guest) {
         System.out.println("채팅을 시작합니다. (종료하려면 엔터 입력)");
 

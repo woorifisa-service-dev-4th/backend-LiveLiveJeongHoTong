@@ -11,10 +11,9 @@ import model.ChatRoom;
 import repository.ChatRoomRepository;
 
 public class ChatRoomService {
-	private final ChatRoomRepository chatRoomRepository = new ChatRoomRepository();
+	private static final ChatRoomRepository chatRoomRepository = new ChatRoomRepository();
 
-	public void createChatRoom(String roomName) {
-		ChatRoom chatRoom = new ChatRoom(roomName);
+	public void createChatRoom(ChatRoom chatRoom) {
 		chatRoomRepository.addChatRoom(chatRoom);
 	}
 
