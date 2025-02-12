@@ -40,7 +40,6 @@ public class Executor {
 	}
 	public static void getChatRoomList() {
 		System.out.println("채팅방 목록");
-		System.out.println(chatRoomService.getChatRooms().size());
 		chatRoomService.
 			getChatRooms().forEach((key, value) -> System.out.println(value));
 	}
@@ -54,6 +53,12 @@ public class Executor {
 			case 1:
 				getChatRoomList();
 				int number = roomNumberReader();
+
+				if (!chatRoomService.getChatRoomId().contains(number)) {
+					System.out.println("존재하지 않는 방 번호입니다.");
+					enterChat(p);
+					break;
+				}
 				service.enter(number);
 				break;
 			case 2:
