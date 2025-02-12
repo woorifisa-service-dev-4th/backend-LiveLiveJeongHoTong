@@ -13,14 +13,14 @@ import java.util.Scanner;
 public class Executor {
 	private static final ChatRoomService chatRoomService = new ChatRoomService();
 	private static final GuestChatService service = new GuestChatService();
-	public static void startChat(Person p) {
+	public static void startChat(String p) {
 		  System.out.println("1. 채팅방 생성하기 (강사만 가능)  2. 채팅방 입장하기");
 		int option = optionsReader("번호를 입력하세요: "); // 입력값을 정수로 변환
 		ChatRoom chatRoom;
 
 		switch (option) {
 			case 1:
-				if (p == null || p instanceof Guest) {
+				if (!p.equals("1")) {
 					System.out.println("권한이 없습니다.\n ");
 					startChat(p);
 					return;
@@ -43,7 +43,7 @@ public class Executor {
 		chatRoomService.
 			getChatRooms().forEach((key, value) -> System.out.println(value));
 	}
-	public static void enterChat(Person p){
+	public static void enterChat(String p){
 		System.out.println("1. 채팅방 목록 보기 2. 메인으로 돌아가기");
 		// 동작을 선택하세요.
 		//1. 채팅방 목록 보기 2. 메인으로 돌아가기  L1로 이동
