@@ -15,7 +15,7 @@ public class Main {
 		// 로그인 - 강사
 
 		// 1. 채팅방 만들기 2. 채팅방 입장하기
-		Person p = new Host(1,"@gmail.com","1234");
+		Person p = new Host("유정호");
 
 		executor.startChat(p);
 	}
