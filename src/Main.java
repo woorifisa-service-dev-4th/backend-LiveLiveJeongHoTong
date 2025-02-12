@@ -10,9 +10,9 @@ public class Main {
     LandingSystem landingSystem = new LandingSystem();
     landingSystem.run();
 
-		Person p = new Host(1,"@gmail.com","1234");
+//		Person p = new Host(1,"@gmail.com","1234");
 
-		startChat(p);
+//		startChat(p);
 	}
 
 }

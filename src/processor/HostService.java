@@ -1,6 +1,7 @@
 package processor;
 
 import model.Host;
+import model.Person;
 import repository.HostDB;
 import util.PasswordDigestUtil;
 
