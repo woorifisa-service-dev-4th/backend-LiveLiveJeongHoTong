@@ -1,14 +1,14 @@
+package model;
 
 public class Host {
-    private int id;
-   private String email;
-   private String password;
 
-   public Host(int id, String email, String password) {
-       this.id = id;
-       this.email = email;
-       this.password = password;
-   }
+    private int id;
+    private String email;
+    private String password;
+
+    public Host(String email) {
+        this.email = email;
+    }
 
     public int getId() {
          return id;
@@ -17,7 +17,15 @@ public class Host {
          return email;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setEmail(String email) {
          this.email = email;
     }
+
+
+
+
 }
