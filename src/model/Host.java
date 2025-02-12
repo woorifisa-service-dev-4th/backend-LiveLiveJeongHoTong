@@ -5,19 +5,22 @@ public class Host  extends Person{
    private String email;
    private String password;
 
-   private String nickName;
-   public Host(int id, String email, String password,String nickName) {
+   public Host(int id, String email, String password) {
        this.id = id;
        this.email = email;
        this.password = password;
-       this.nickName = nickName;
    }
-   public Host(String nickName) {
-       this.nickName = nickName;
-   }
+    public Host(String email) {
+        this.email = email;
+    }
 
-   public String getNickName() {
-       return nickName;
-   }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
 }
