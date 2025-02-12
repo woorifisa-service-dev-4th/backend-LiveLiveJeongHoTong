@@ -12,11 +12,11 @@ import model.ChatRoom;
 public class Reader {
 	private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-	public static int optionsReader() {
+	public static int optionsReader(String msg) {
 		int ret;
 		while (true) {
 			try {
-				System.out.print("번호를 입력하세요: ");
+				System.out.print(msg);
 				String input = br.readLine();
 				System.out.println();
 
