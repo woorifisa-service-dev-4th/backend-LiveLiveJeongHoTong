@@ -1,7 +1,5 @@
-package ChatMessage.system;
-
-import ChatMessage.model.ChatMessage;
-import ChatMessage.model.MessageType;
+import model.ChatMessage;
+import model.enumtype.MessageType;
 
 public class ChatMessageSystem {
 

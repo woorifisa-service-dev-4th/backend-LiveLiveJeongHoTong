@@ -1,4 +1,4 @@
-package ChatMessage.model;
+package model.enumtype;
 
 /*
 * - type: 답장 혹은 질문을 구분

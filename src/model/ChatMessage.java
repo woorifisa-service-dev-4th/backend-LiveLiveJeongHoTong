@@ -1,4 +1,4 @@
-package ChatMessage.model;
+package model;
 
 /*/채팅 클래스
 Class Summary
@@ -13,6 +13,8 @@ Method Summary
 - getContent(): 채팅의 내용을 읽어온다.
 - setContent(): 채팅의 내용을 정한다.
 */
+
+import model.enumtype.MessageType;
 
 import java.time.LocalDateTime;
 
