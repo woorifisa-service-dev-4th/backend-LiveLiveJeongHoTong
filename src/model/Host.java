@@ -11,14 +11,4 @@ public class Host  extends Person{
        this.password = password;
    }
 
-    public int getId() {
-         return id;
-    }
-    public String getEmail() {
-         return email;
-    }
-
-    public void setEmail(String email) {
-         this.email = email;
-    }
 }
