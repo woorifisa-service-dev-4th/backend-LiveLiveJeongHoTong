@@ -38,6 +38,8 @@ public class GuestChatService {
         }
     }
 
+    // 한번 해보고
+
 
     public void chat(Guest guest) {
         System.out.println("채팅을 시작합니다. (종료하려면 엔터 입력)");

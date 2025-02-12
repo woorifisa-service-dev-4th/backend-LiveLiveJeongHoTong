@@ -1,11 +1,19 @@
+import executor.Executor;
 import service.GuestChatService;
 
 public class Main {
 	public static void main(String[] args) {
-		GuestChatService service = new GuestChatService();
+		Executor executor = new Executor();
 
-		service.enter(100);
+		// 1. 유저타입을 선택하세요
 
-		System.out.println("Hello world!");
+		// 강사 - 회원가입, 로그인
+
+		// 로그인 - 강사
+
+		// 1. 채팅방 만들기 2. 채팅방 입장하기
+
+
+		executor.startChat();
 	}
 }
