@@ -10,7 +10,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../00.sw/99.lib/log4j-api-2.17.1.jar!/" />
+          <root url="jar://$USER_HOME$/00.sw/99.lib/log4j-api-2.17.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,12 +19,12 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../00.sw/99.lib/log4j-core-2.17.1.jar!/" />
+          <root url="jar://$USER_HOME$/00.sw/99.lib/log4j-core-2.17.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="log4j-api-2.17.1" level="project" />
+    <orderEntry type="library" exported="" name="log4j-api-2.17.1" level="project" />
   </component>
 </module>
