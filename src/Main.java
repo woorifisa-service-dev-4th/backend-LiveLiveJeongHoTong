@@ -1,9 +1,8 @@
-import system.LandingSystem;
+import executor.MainExecutor;
 
 public class Main {
-	public static void main(String[] args) {
-    LandingSystem landingSystem = new LandingSystem();
-    landingSystem.run();
+    public static void main(String[] args) {
+        MainExecutor.run();
 	}
 
 }

@@ -2,7 +2,7 @@ package repository;
 
 import java.util.ArrayList;
 
-public class HostDB {
+public class HostRepository {
 
     private static ArrayList<String[]> HostData = new ArrayList<>();
 
@@ -19,7 +19,7 @@ public class HostDB {
     }
 
     // 호스트 계정 생성
-    public void set_HOST(int id, String email, String hashing_passwd, String SALT) {
+    public void setHost(int id, String email, String hashing_passwd, String SALT) {
         String[] temp = {String.valueOf(id), email , hashing_passwd, SALT};
         HostData.add(temp);
     }
@@ -39,7 +39,7 @@ public class HostDB {
 
 
     // 해당 id의 SALT값 찾기
-    public String get_SALT(String email) {
+    public String getSalt(String email) {
         String salt = null;
         for(int i=0 ; i<HostData.size() ; i++) {
             if(email.equals(HostData.get(i)[1])) {
