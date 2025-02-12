@@ -11,5 +11,8 @@ public class ChatRoomRepository {
 	public void addChatRoom(ChatRoom chatRoom) {
 		chatRooms.put(chatRoom.getRoomNumber(), chatRoom);
 	}
-	public Map<Integer, ChatRoom> getChatRooms() {return chatRooms;}
+
+	public Map<Integer, ChatRoom> getChatRooms() {
+		return chatRooms;
+	}
 }

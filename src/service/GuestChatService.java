@@ -13,6 +13,7 @@ public class GuestChatService {
     private GuestValidator guestValidator;
     private List<Guest> guestList;
     private List<ChatMessage> chatList;
+
     private Scanner scanner;
 
     public GuestChatService() {
