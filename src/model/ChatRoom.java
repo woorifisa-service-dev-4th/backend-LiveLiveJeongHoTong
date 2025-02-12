@@ -22,6 +22,6 @@ public class ChatRoom {
 
     @Override
     public String toString() {
-        return String.format("방 이름: %s \n방 번호: %0,9d \n방 생성 일자: %tF %tT\n", roomName, roomNumber, createdDate, createdDate);
+        return String.format("방 이름: %s \n방 번호: %d \n방 생성 일자: %tF %tT\n", roomName, roomNumber, createdDate, createdDate);
     }
 }
