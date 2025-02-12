@@ -26,7 +26,5 @@ public class Guest {
 	public void setRoomNumber(int roomNumber) {
 		this.roomNumber = roomNumber;
 	}
-	public void enterRoom(){
-		//임시 언언
-	}
+
 }
