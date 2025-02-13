@@ -16,8 +16,7 @@
 │   │   ├── Main.java  # 메인 실행 클래스
 ```
 ## 📌"사용자 흐름: 채팅방 생성 및 입장"
-![image](https://github.com/user-attachments/assets/aaade92c-35f6-4ecb-9d10-0658b247018f)
-
+![image](https://github.com/user-attachments/assets/4fce815e-0a48-4dff-ae5d-50021f3bb6eb)
 
 ## 📌 주요 기능
 ### 🚀 Java Security 기반 로그인 시스템
