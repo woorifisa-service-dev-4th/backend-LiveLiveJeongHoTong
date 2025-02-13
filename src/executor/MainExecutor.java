@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import static executor.Executor.startChat;
+import static util.AsciiArt.*;
 
 public class MainExecutor {
 
@@ -23,6 +24,7 @@ public class MainExecutor {
         boolean running = true;
         String n;
         while (running) {
+            printGMG();
             System.out.print("유저타입을 선택하세요 \t 1. 강사 \t  2. 학생");
             System.out.println("\t >>>>>>  ");
 
