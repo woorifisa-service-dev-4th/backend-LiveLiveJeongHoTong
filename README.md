@@ -2,6 +2,11 @@
 ## 📌 프로젝트 소개
 **생생정호통**은 강사와 학생이 실시간으로 채팅할 수 있는 콘솔 기반 채팅 애플리케이션입니다.
 
+
+## 📌사용자 흐름: 채팅방 생성 및 입장
+![image](https://github.com/user-attachments/assets/4fce815e-0a48-4dff-ae5d-50021f3bb6eb)
+
+
 ## 📌 프로젝트 구조
 ```plaintext
 /backend-LiveLiveJeongHoTong
@@ -15,9 +20,6 @@
 │   │   ├── util/                 # 콘솔 출력 및 유틸리티
 │   │   ├── Main.java  # 메인 실행 클래스
 ```
-## 📌"사용자 흐름: 채팅방 생성 및 입장"
-![image](https://github.com/user-attachments/assets/4fce815e-0a48-4dff-ae5d-50021f3bb6eb)
-
 ## 📌 주요 기능
 ### 🚀 Java Security 기반 로그인 시스템
 
