@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HostValidator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">validator</a> &gt; <span class="el_source">HostValidator.java</span></div><h1>HostValidator.java</h1><pre class="source lang-java linenums">package validator;
+
+<span class="nc" id="L3">public class HostValidator {</span>
+
+    public static void validateEmail(String email) {
+<span class="pc bpc" id="L6" title="2 of 4 branches missed.">        if(email == null || email.trim().isEmpty()) {</span>
+<span class="nc" id="L7">            throw new IllegalArgumentException(&quot;�씠硫붿씪�쓣 �엯�젰�빐二쇱꽭�슂.&quot;);</span>
+        }
+<span class="pc bpc" id="L9" title="1 of 2 branches missed.">        if(!email.contains(&quot;@&quot;)) {</span>
+<span class="nc" id="L10">            throw new IllegalArgumentException(&quot;�삱諛붾Ⅸ �씠硫붿씪 �삎�떇�씠 �븘�떃�땲�떎&quot;);</span>
+        }
+<span class="fc" id="L12">    }</span>
+
+    public static void validatePassword(String password) {
+<span class="pc bpc" id="L15" title="2 of 4 branches missed.">        if(password == null || password.trim().isEmpty()) {</span>
+<span class="nc" id="L16">            throw new IllegalArgumentException(&quot;鍮꾨�踰덊샇瑜� �엯�젰�빐二쇱꽭�슂&quot;);</span>
+        }
+<span class="fc" id="L18">    }</span>
+
+    public static void validateDuplicateEmail(String salt) {
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        if(salt != null) {</span>
+<span class="nc" id="L22">            throw new IllegalArgumentException(&quot;�씠誘� 議댁옱�븯�뒗 �씠硫붿씪�엯�땲�떎&quot;);</span>
+        }
+<span class="fc" id="L24">    }</span>
+
+    public static void validateExistingUser(String salt) {
+<span class="nc bnc" id="L27" title="All 2 branches missed.">        if(salt == null) {</span>
+<span class="nc" id="L28">            throw new IllegalArgumentException(&quot;議댁옱�븯吏� �븡�뒗 �궗�슜�옄�엯�땲�떎&quot;);</span>
+        }
+<span class="nc" id="L30">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

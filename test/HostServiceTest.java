@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import repository.HostRepository;
 import service.HostService;
 import util.PasswordDigestUtil;
@@ -13,7 +14,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class HostServiceTest {
 
+
     private HostService hostService;
+
 
     @BeforeEach
     void setUp() {

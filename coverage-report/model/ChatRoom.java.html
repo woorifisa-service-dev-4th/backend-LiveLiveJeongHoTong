@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ChatRoom.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">model</a> &gt; <span class="el_source">ChatRoom.java</span></div><h1>ChatRoom.java</h1><pre class="source lang-java linenums">package model;
+
+
+import java.util.Date;
+
+import static util.ChatRoomUtil.createChatRoomNumber;
+
+public class ChatRoom {
+    private String roomName;
+    private int roomNumber;
+    private Date createdDate;
+
+<span class="nc" id="L13">    public ChatRoom(String roomName) {</span>
+<span class="nc" id="L14">        this.roomName = roomName;</span>
+<span class="nc" id="L15">        roomNumber = createChatRoomNumber();</span>
+<span class="nc" id="L16">        createdDate = new Date();</span>
+<span class="nc" id="L17">    }</span>
+
+    public int getRoomNumber() {
+<span class="nc" id="L20">        return roomNumber;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L25">        return String.format(&quot;諛� �씠由�: %s \n諛� 踰덊샇: %d \n諛� �깮�꽦 �씪�옄: %tF %tT\n&quot;, roomName, roomNumber, createdDate, createdDate);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

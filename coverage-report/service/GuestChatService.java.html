@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GuestChatService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">service</a> &gt; <span class="el_source">GuestChatService.java</span></div><h1>GuestChatService.java</h1><pre class="source lang-java linenums">package service;
+
+import model.ChatMessage;
+import model.Guest;
+import model.Host;
+import model.Person;
+import model.enumtype.MessageType;
+import service.validator.GuestValidator;
+
+import java.io.*;
+import java.util.*;
+public class GuestChatService {
+
+    private GuestValidator guestValidator;
+    private List&lt;Guest&gt; guestList;
+    private List&lt;ChatMessage&gt; chatList;
+
+    private Scanner scanner;
+
+<span class="nc" id="L20">    public GuestChatService() {</span>
+<span class="nc" id="L21">        this.guestValidator = new GuestValidator();</span>
+<span class="nc" id="L22">        this.guestList = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L23">        this.chatList = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L24">        this.scanner = new Scanner(System.in);</span>
+<span class="nc" id="L25">    }</span>
+
+    public void enter(int roomNumber) {
+<span class="nc" id="L28">        Guest guest = new Guest(roomNumber);</span>
+<span class="nc" id="L29">        guestList.add(guest);</span>
+<span class="nc" id="L30">        System.out.println(&quot;�엯�옣�븯�떊 諛� 踰덊샇�뒗 &quot; + roomNumber + &quot; �엯�땲�떎.&quot;);</span>
+<span class="nc" id="L31">        System.out.println(&quot;�엯�옣�븯�떊 �땳�꽕�엫�� &quot; + guest.getNickname()+ &quot; �엯�땲�떎.&quot;);</span>
+<span class="nc" id="L32">        chatList.add(new ChatMessage(&quot;媛뺤궗&quot;, &quot;�븞�뀞�븯�꽭�슂! 臾댁뾿�쓣 �룄���뱶由닿퉴�슂?&quot;, MessageType.REQ));</span>
+<span class="nc" id="L33">        chatList.add(new ChatMessage(&quot;Anonymous64639307&quot;, &quot;�븞�뀞�븯�꽭�슂! 吏덈Ц�씠 �엳�뒿�땲�떎.&quot;, MessageType.RES));</span>
+<span class="nc" id="L34">        chatList.add(new ChatMessage(&quot;媛뺤궗&quot;, &quot;�꽕? 吏덈Ц�빐二쇱꽭�슂.&quot;, MessageType.REQ));</span>
+<span class="nc" id="L35">        chatList.add(new ChatMessage(&quot;Anonymous64639307&quot;, &quot;�씠 肄붾뱶瑜� �뼱�뼸寃� 媛쒖꽑�븷 �닔 �엳�쓣源뚯슂?&quot;, MessageType.RES));</span>
+<span class="nc" id="L36">        chat(guest); // �엯�옣 �썑 梨꾪똿 �떆�옉</span>
+<span class="nc" id="L37">    }</span>
+
+    public void chat(Guest guest) {
+<span class="nc" id="L40">        System.out.println(&quot;梨꾪똿�쓣 �떆�옉�빀�땲�떎. (醫낅즺�븯�젮硫� �뿏�꽣 �엯�젰)&quot;);</span>
+
+        while (true) {
+<span class="nc bnc" id="L43" title="All 2 branches missed.">            for (ChatMessage chatMessage : chatList) {</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">                if (chatMessage.getType() == MessageType.RES) {</span>
+<span class="nc" id="L45">                    System.out.println(&quot;媛뺤궗: &quot; + chatMessage.getContent());</span>
+                } else {
+<span class="nc" id="L47">                    System.out.println(&quot;                           &quot;+guest.getNickname() + &quot;: &quot; + chatMessage.getContent());</span>
+                }
+<span class="nc" id="L49">            }</span>
+<span class="nc" id="L50">            System.out.print(&quot;梨꾪똿 �엯�젰: &quot;);</span>
+<span class="nc" id="L51">            String message = scanner.nextLine();</span>
+
+<span class="nc bnc" id="L53" title="All 2 branches missed.">            if (message.isEmpty()) {</span>
+<span class="nc" id="L54">                System.out.println(&quot;梨꾪똿�쓣 醫낅즺�빀�땲�떎.&quot;);</span>
+<span class="nc" id="L55">                break;</span>
+            }
+            // 異쒕젰 �삎�떇 留욎땄
+
+
+            // �쑀�� 硫붿떆吏� 湲곕줉
+<span class="nc" id="L61">            MessageType messageType = MessageType.REQ;</span>
+<span class="nc" id="L62">            ChatMessage userMessage = new ChatMessage(guest.getNickname(), message, messageType);</span>
+<span class="nc" id="L63">            chatList.add(userMessage); // 硫붿떆吏� ���옣</span>
+
+
+
+<span class="nc" id="L67">        }</span>
+<span class="nc" id="L68">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

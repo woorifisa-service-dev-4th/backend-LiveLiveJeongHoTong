@@ -13,5 +13,11 @@ public class InputNameValidator {
 		}
 		return true;
 	}
-
+	public static String isOptionValidString(String options) {
+		options = Objects.requireNonNull(options, "⚠ 입력 오류: 잘못된 입력입니다.\n"); // NPE 발생
+		if (!options.equals("1") && !options.equals("2")) {
+			return ("⚠ 입력 오류: 잘못된 입력입니다. 1 또는 2를 입력하세요.\n");
+		}
+		return "올바른 입력입니다.";
+	}
 }
