@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HostDto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">data</a> &gt; <span class="el_source">HostDto.java</span></div><h1>HostDto.java</h1><pre class="source lang-java linenums">package data;
+
+public class HostDto {
+    private int id;
+    private String email;
+    private String password;
+
+<span class="nc" id="L8">    private HostDto(Builder builder) {</span>
+<span class="nc" id="L9">        this.id = builder.id;</span>
+<span class="nc" id="L10">        this.email = builder.email;</span>
+<span class="nc" id="L11">        this.password = builder.password;</span>
+<span class="nc" id="L12">    }</span>
+
+<span class="nc" id="L14">    public static class Builder {</span>
+        private int id;
+        private String email;
+        private String password;
+
+        public Builder id(int id) {
+<span class="nc" id="L20">            this.id = id;</span>
+<span class="nc" id="L21">            return this;</span>
+        }
+
+        public Builder email(String email) {
+<span class="nc" id="L25">            this.email = email;</span>
+<span class="nc" id="L26">            return this;</span>
+        }
+
+        public Builder password(String password) {
+<span class="nc" id="L30">            this.password = password;</span>
+<span class="nc" id="L31">            return this;</span>
+        }
+
+        public HostDto build() {
+<span class="nc" id="L35">            return new HostDto(this);</span>
+        }
+    }
+
+    public static Builder builder() {
+<span class="nc" id="L40">        return new Builder();</span>
+    }
+
+    // getter 硫붿꽌�뱶�뱾
+    public int getId() {
+<span class="nc" id="L45">        return id;</span>
+    }
+
+    public String getEmail() {
+<span class="nc" id="L49">        return email;</span>
+    }
+
+    public String getPassword() {
+<span class="nc" id="L53">        return password;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

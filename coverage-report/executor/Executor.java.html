@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Executor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">executor</a> &gt; <span class="el_source">Executor.java</span></div><h1>Executor.java</h1><pre class="source lang-java linenums">package executor;
+
+import static util.Reader.*;
+
+import model.ChatRoom;
+import model.Guest;
+import model.Person;
+import service.ChatRoomService;
+import service.GuestChatService;
+
+import java.util.Scanner;
+
+<span class="nc" id="L13">public class Executor {</span>
+<span class="nc" id="L14">	private static final ChatRoomService chatRoomService = new ChatRoomService();</span>
+<span class="nc" id="L15">	private static final GuestChatService service = new GuestChatService();</span>
+	public static void startChat(String p) {
+<span class="nc" id="L17">		  System.out.println(&quot;1. 梨꾪똿諛� �깮�꽦�븯湲� (媛뺤궗留� 媛��뒫)  2. 梨꾪똿諛� �엯�옣�븯湲�&quot;);</span>
+<span class="nc" id="L18">		int option = optionsReader(&quot;踰덊샇瑜� �엯�젰�븯�꽭�슂: &quot;); // �엯�젰媛믪쓣 �젙�닔濡� 蹂��솚</span>
+		ChatRoom chatRoom;
+
+<span class="nc bnc" id="L21" title="All 3 branches missed.">		switch (option) {</span>
+			case 1:
+<span class="nc bnc" id="L23" title="All 2 branches missed.">				if (!p.equals(&quot;1&quot;)) {</span>
+<span class="nc" id="L24">					System.out.println(&quot;沅뚰븳�씠 �뾾�뒿�땲�떎.\n &quot;);</span>
+<span class="nc" id="L25">					startChat(p);</span>
+<span class="nc" id="L26">					return;</span>
+				}
+<span class="nc" id="L28">				String roomName = roomNameReader();</span>
+<span class="nc" id="L29">				chatRoom = new ChatRoom(roomName);</span>
+<span class="nc" id="L30">				chatRoomService.createChatRoom(chatRoom);</span>
+<span class="nc" id="L31">				System.out.println(&quot;梨꾪똿諛� �깮�꽦�맖: &quot; + chatRoom);</span>
+
+<span class="nc" id="L33">				enterChat(p);</span>
+<span class="nc" id="L34">				break;</span>
+			case 2:
+<span class="nc" id="L36">				int number = roomNumberReader();</span>
+<span class="nc" id="L37">				service.enter(number);</span>
+				break;
+		}
+<span class="nc" id="L40">	}</span>
+	public static void getChatRoomList() {
+<span class="nc" id="L42">		System.out.println(&quot;梨꾪똿諛� 紐⑸줉&quot;);</span>
+<span class="nc" id="L43">		chatRoomService.</span>
+<span class="nc" id="L44">			getChatRooms().forEach((key, value) -&gt; System.out.println(value));</span>
+<span class="nc" id="L45">	}</span>
+	public static void enterChat(String p){
+<span class="nc" id="L47">		System.out.println(&quot;1. 梨꾪똿諛� 紐⑸줉 蹂닿린 2. 硫붿씤�쑝濡� �룎�븘媛�湲�&quot;);</span>
+		// �룞�옉�쓣 �꽑�깮�븯�꽭�슂.
+		//1. 梨꾪똿諛� 紐⑸줉 蹂닿린 2. 硫붿씤�쑝濡� �룎�븘媛�湲�  L1濡� �씠�룞
+<span class="nc" id="L50">		int option = optionsReader(&quot;踰덊샇瑜� �엯�젰�븯�꽭�슂: &quot;); // �엯�젰媛믪쓣 �젙�닔濡� 蹂��솚</span>
+<span class="nc" id="L51">		GuestChatService service = new GuestChatService();</span>
+<span class="nc bnc" id="L52" title="All 3 branches missed.">		switch (option) {</span>
+			case 1:
+<span class="nc" id="L54">				getChatRoomList();</span>
+<span class="nc" id="L55">				int number = roomNumberReader();</span>
+
+<span class="nc bnc" id="L57" title="All 2 branches missed.">				if (!chatRoomService.getChatRoomId().contains(number)) {</span>
+<span class="nc" id="L58">					System.out.println(&quot;議댁옱�븯吏� �븡�뒗 諛� 踰덊샇�엯�땲�떎.&quot;);</span>
+<span class="nc" id="L59">					enterChat(p);</span>
+<span class="nc" id="L60">					break;</span>
+				}
+<span class="nc" id="L62">				service.enter(number);</span>
+<span class="nc" id="L63">				break;</span>
+			case 2:
+<span class="nc" id="L65">				startChat(p);</span>
+				break;
+		}
+<span class="nc" id="L68">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

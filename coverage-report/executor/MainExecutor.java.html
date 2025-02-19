@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainExecutor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">executor</a> &gt; <span class="el_source">MainExecutor.java</span></div><h1>MainExecutor.java</h1><pre class="source lang-java linenums">package executor;
+
+import service.HostService;
+import repository.HostRepository;
+import util.PasswordDigestUtil;
+import validator.MenuValidator;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+import static executor.Executor.startChat;
+import static util.AsciiArt.*;
+
+<span class="nc" id="L14">public class MainExecutor {</span>
+
+<span class="fc" id="L16">    private static final Scanner in = new Scanner(System.in);</span>
+<span class="fc" id="L17">    private static final HostRepository hostDB = new HostRepository();</span>
+<span class="fc" id="L18">    private static final PasswordDigestUtil digestUtil = new PasswordDigestUtil();</span>
+<span class="fc" id="L19">    private static final HostService hostService = new HostService(hostDB, digestUtil);</span>
+<span class="fc" id="L20">    private static final SignInExecutor signin = new SignInExecutor(hostService);</span>
+<span class="fc" id="L21">    private static final SignUpExecutor signup = new SignUpExecutor(hostService);</span>
+
+    public static void run() {
+<span class="fc" id="L24">        boolean running = true;</span>
+        String n;
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        while (running) {</span>
+<span class="fc" id="L27">            printGMG();</span>
+<span class="fc" id="L28">            System.out.print(&quot;�쑀�����엯�쓣 �꽑�깮�븯�꽭�슂 \t 1. 媛뺤궗 \t  2. �븰�깮&quot;);</span>
+<span class="fc" id="L29">            System.out.println(&quot;\t &gt;&gt;&gt;&gt;&gt;&gt;  &quot;);</span>
+
+<span class="nc" id="L31">             n = in.nextLine();</span>
+
+            try {
+<span class="nc" id="L34">                MenuValidator.validateMainMenu(n);</span>
+
+<span class="nc bnc" id="L36" title="All 2 branches missed.">                if (n.equals(&quot;1&quot;)) {</span>
+<span class="nc" id="L37">                    handleHostMenu(n);</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">                } else if (n.equals(&quot;2&quot;)) {</span>
+<span class="nc" id="L39">                    System.out.println(&quot;�븰�깮 �럹�씠吏�濡� �씠�룞�빀�땲�떎&quot;);</span>
+<span class="nc" id="L40">                    startChat(n);</span>
+<span class="nc" id="L41">                    running = false;</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">                } else if (n.equals(&quot;3&quot;)) {</span>
+<span class="nc" id="L43">                    System.out.println(&quot;�봽濡쒓렇�옩�쓣 醫낅즺�빀�땲�떎&quot;);</span>
+<span class="nc" id="L44">                    running = false;</span>
+                }
+<span class="nc" id="L46">            } catch (IOException e) {</span>
+<span class="nc" id="L47">                System.out.println(e.getMessage());</span>
+<span class="nc" id="L48">            }</span>
+        }
+<span class="nc" id="L50">    }</span>
+
+    private static void handleHostMenu(String p) {
+        while (true) {
+<span class="nc" id="L54">            System.out.print(&quot;1. �쉶�썝媛��엯 \t  2. 濡쒓렇�씤 \t  3. �룎�븘媛�湲� \t  4. 醫낅즺&quot;);</span>
+<span class="nc" id="L55">            System.out.println(&quot;\t &gt;&gt;&gt;&gt;&gt;&gt;  &quot;);</span>
+<span class="nc" id="L56">            String n = in.nextLine();</span>
+
+            try {
+<span class="nc" id="L59">                MenuValidator.validateHostMenu(n);</span>
+
+<span class="nc bnc" id="L61" title="All 2 branches missed.">                if (n.equals(&quot;1&quot;)) {</span>
+<span class="nc" id="L62">                    signup.make_host();</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">                } else if (n.equals(&quot;2&quot;)) {</span>
+<span class="nc" id="L64">                    boolean loginSuccess = signin.login();</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">                    if (loginSuccess) startChat(p);</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">                } else if (n.equals(&quot;3&quot;)) {</span>
+<span class="nc" id="L67">                    return;</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">                } else if (n.equals(&quot;4&quot;)) {</span>
+<span class="nc" id="L69">                    System.out.println(&quot;�봽濡쒓렇�옩�쓣 醫낅즺�빀�땲�떎&quot;);</span>
+<span class="nc" id="L70">                    System.exit(0);</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">                } else if (n.equals(&quot;admin&quot;)) {</span>
+<span class="nc" id="L72">                    System.out.println(hostService.getHostDB());</span>
+                }
+<span class="nc" id="L74">            } catch (IOException e) {</span>
+<span class="nc" id="L75">                System.out.println(e.getMessage());</span>
+<span class="nc" id="L76">            }</span>
+<span class="nc" id="L77">        }</span>
+
+        }
+    }
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
